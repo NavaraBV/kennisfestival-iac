@@ -1,0 +1,26 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.217.4/containers/ubuntu
+{
+  "name": "IaC",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": { "VARIANT": "16-bullseye" }
+  },
+
+  // Set *default* container specific settings.json values on container create.
+  "settings": {},
+
+  // Add the IDs of extensions you want installed when the container is created.
+  "extensions": [
+    "4ops.terraform", 
+    "ms-azuretools.vscode-azurefunctions",
+    "johnsoncodehk.volar", 
+    "johnsoncodehk.vscode-typescript-vue-plugin"
+  ],
+
+  // Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+  "remoteUser": "node",
+  "features": {
+    "azure-cli": "latest"
+  }
+}
