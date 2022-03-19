@@ -2,7 +2,7 @@ import os
 
 from pymongo import MongoClient
 
-from schemas.tasks import Task
+from schemas.tasks import Task, TaskInDb
 
 
 def __get_collection():
@@ -13,12 +13,13 @@ def __get_collection():
 
 def list_tasks():
     db = __get_collection()
-    tasks = [Task(**task).dict() for task in db.find({})]
+    tasks = [TaskInDb(id=str(task['_id']), **task).dict() for task in db.find({})]
     return tasks
 
 
 def add_task(task):
     db = __get_collection()
-    db.insert_one(task.dict())
+    object_id = db.insert_one(task.dict()).inserted_id
     count = db.count_documents({})
-    return {"message": "task added", "number of tasks": count}
+    new_task = TaskInDb(**task.dict(), id=str(object_id))
+    return new_task.dict()
