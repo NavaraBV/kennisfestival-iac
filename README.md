@@ -38,3 +38,16 @@ This will open a browser in which you can log in with your NAVARA credentials. I
   }
 ]
 ```
+
+If you have access to more subscriptions, view all subscriptions with
+
+```
+az account show
+```
+
+Switch to the desired subscription:
+
+```
+az account set --subscription “<my subscription name>”
+```
+

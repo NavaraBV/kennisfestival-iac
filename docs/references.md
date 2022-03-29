@@ -79,7 +79,7 @@ output "app_service_id" {
 
 Waardes voor de variable zijn op 4 manieren te zetten:
 
-1. Een default waarde in de variable declaratie.
+1. Een default waarde in de variable declaratie. Deze gebruiken we gedurende deze sessie.
 2. Via een `terraform.tfvars.json` file.
 3. Een environment variable met de naam `TF_VAR_resource_group_name`.
 4. Input vanuit de command line (als geen andere waarde gezet is).

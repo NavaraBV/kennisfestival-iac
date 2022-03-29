@@ -6,8 +6,8 @@ set -e
 cd ../terraform
 backend_name="$(terraform output -raw backend-name)"
 backend_url="$(terraform output -raw backend-url)"
-account_name="$(terraform output -raw account-name)"
-account_key="$(terraform output -raw account-key)"
+account_name="$(terraform output -raw frontend-account-name)"
+account_key="$(terraform output -raw frontend-account-key)"
 frontend_url="$(terraform output -raw frontend-url)"
 
 # Deploy the backend
